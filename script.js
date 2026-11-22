@@ -45,17 +45,19 @@ async function sendMessage() {
   ];
 
   try {
-    const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-goog-api-key": apiKey
-        },
-        body: JSON.stringify({ contents })
-      }
-    );
+    
+const response = await fetch(
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-goog-api-key": apiKey
+    },
+    body: JSON.stringify({ contents })
+  }
+);
+
 
     const data = await response.json();
 
